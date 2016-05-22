@@ -6,6 +6,7 @@ include ($_SERVER['DOCUMENT_ROOT']."/checkit/database/connect.php");
 
 
 
+
     if (isset($_POST['submitSignup'])) {
 
         if (empty($_POST['user']) || empty($_POST['pass'])) {
