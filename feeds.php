@@ -305,6 +305,7 @@ if (isset($_POST['addfeedback'])) {
 
                             <div class="form-group global feedback" typeb="global">
                                 <label>Customer's Experience</label>
+
                                 <input type="text" id="experienceGlobal" name="experienceGlobal" class="rating rating-loading" value="0" data-size="xs" title="">
                             </div>
 
