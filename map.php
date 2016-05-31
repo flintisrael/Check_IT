@@ -17,6 +17,7 @@ include ($_SERVER['DOCUMENT_ROOT']."/checkit/login/session.php");
     <script src="js/map.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootbox.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/slider_range.js"></script>
     <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=false"></script>
@@ -34,7 +35,7 @@ include ($_SERVER['DOCUMENT_ROOT']."/checkit/login/session.php");
 
     <!-- Custom CSS -->
     <link href="css/sb-admin.css" rel="stylesheet">
-
+    <link href="css/main.css" rel="stylesheet">
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href = "css/slider_range.css" rel = "stylesheet"  >
@@ -185,13 +186,13 @@ include ($_SERVER['DOCUMENT_ROOT']."/checkit/login/session.php");
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i><?php echo ' '.$login_session; ?><b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+                            <a href="#" onClick="bootbox.alert('Page Under Construction')"><i class="fa fa-fw fa-user"></i> Profile</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
+                            <a href="#" onClick="bootbox.alert('Page Under Construction')"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
+                            <a href="#" onClick="bootbox.alert('Page Under Construction')"><i class="fa fa-fw fa-gear"></i> Settings</a>
                         </li>
                         <li class="divider"></li>
                         <li>
@@ -203,41 +204,29 @@ include ($_SERVER['DOCUMENT_ROOT']."/checkit/login/session.php");
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
-                    <li>
-                        <a href="BusinessRealtimeDetails.php"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
-                    </li>
-                    <li>
-                        <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
-                    </li>
-                    <li>
-                        <a href="tables.html"><i class="fa fa-fw fa-table"></i> Tables</a>
-                    </li>
-                    <li>
-                        <a href="forms.html"><i class="fa fa-fw fa-edit"></i> Forms</a>
-                    </li>
-                    <li>
-                        <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
-                    </li>
-                    <li>
-                        <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
-                    </li>
-                    <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="demo" class="collapse">
-                            <li>
-                                <a href="#">Dropdown Item</a>
-                            </li>
-                            <li>
-                                <a href="#">Dropdown Item</a>
-                            </li>
-                        </ul>
-                    </li>
                     <li class="active">
-                        <a href="map.php"><i class="fa fa-fw fa-file"></i> My Map</a>
+                        <a href="map.php"><i class="fa fa-fw fa-map-marker"></i> My Map</a>
                     </li>
                     <li>
-                        <!-- <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a> -->
-                        <a href="#" data-toggle="modal" data-target="#filter" ><i class="fa fa-fw fa-desktop "></i> Filter Businesses</a>
+                        <a href="#" data-toggle="modal" data-target="#filter" ><i class="fa fa-fw fa-filter"></i> Filter Businesses</a>
+                    </li>
+                    <li class="graybackround">
+                        <a class="disabled"><i class="fa fa-fw fa-tachometer"></i> Business Statistics</a>
+                    </li>
+                    <li class="graybackround">
+                        <a class="disabled"><i class="fa fa-fw fa-desktop"></i> Business Details</a>
+                    </li>
+                    <li class="graybackround">
+                        <a class="disabled"><i class="fa fa-fw fa-pencil-square-o"></i> Write Review</a>
+                    </li>
+                    <li>
+                        <a href="#" onClick="bootbox.alert('Page Under Construction')"><i class="fa fa-fw fa-users"></i> Find Friends</a>
+                    </li>
+                    <li>
+                        <a href="#" onClick="bootbox.alert('Page Under Construction')"><i class="fa fa-fw fa-list-ul"></i> Forum</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/flintisrael/Check-IT/wiki"><i class="fa fa-fw fa-github"></i> About Us</a>
                     </li>
                 </ul>
             </div>
