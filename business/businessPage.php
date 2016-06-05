@@ -40,10 +40,10 @@ if (isset($_POST['submit'])) {
     $datephp = $time->format('Y-m-d H:i:s');
 
     if($name == ''){
-        $errors = "Error1: Name Required".PHP_EOL;
+        $errors = "Name is Required. </br>".PHP_EOL;
     }
     if($BusinessType == -1){
-        $errors.= "Error2: Business Type Required".PHP_EOL;
+        $errors.= PHP_EOL."Business Type is Required.</br>".PHP_EOL;
     }
 
 
@@ -65,10 +65,10 @@ if (isset($_POST['submit'])) {
             $expensions= array("jpeg","jpg","png");
 
             if(in_array($file_ext,$expensions)=== false){
-                $errors.="please choose a JPEG or PNG or png file.";
+                $errors.="please choose a JPEG or PNG or png file. </br>";
             }
             if($file_size > 2097152){
-                $errors.='File size must be excately 2 MB';
+                $errors.='File size must be excately 2 MB .</br>';
             }
 
         }
@@ -130,7 +130,8 @@ if (isset($_POST['submit'])) {
 
     }
     else{
-        die($errors);
+    // die($errors);
+
     }
 
 }
@@ -335,7 +336,7 @@ if (isset($_POST['submit'])) {
                     <h3>Business Details</h3>
                 </div>
                 <div class="col-lg-12">
-                   <label></label>
+                   <label style="color: #ff0000"><?php echo $errors ?></label>
                 </div>
                     <div class="col-lg-12">
                         <div class="col-xs-6 col-md-4">
@@ -778,7 +779,7 @@ if (isset($_POST['submit'])) {
                             --->
 
                             <br><br><br><br>
-                            <input class="btn btn-default" name="submit" type="submit" value="Submit Button">
+                            <input class="btn btn-default" name="submit" type="submit" value="Submit Button" onclick="return confirm('Are you sure you want to do that?');">
                             <button type="reset" class="btn btn-default">Reset Button</button>
 
                             <br><br><br><br>
