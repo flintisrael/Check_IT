@@ -1,5 +1,8 @@
 <?php
-//include('login/session.php');
+/*
+  Main page to business users
+  All businesses of the current user load on map by businessmap.js file
+ */
 include ($_SERVER['DOCUMENT_ROOT']."/checkit/login/session.php");
 ?>
 
