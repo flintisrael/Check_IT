@@ -2,11 +2,17 @@ $(function()
 {
     var bid = location.search.split('bid=')[1];
 
+
+    /**
+     * the function get event if BusinessType field change
+     * the function hide the all of not relevant fields and show the relevant Fields
+     * @BusinessType change event
+     */
     $( "#BusinessType" ).change(function() {
         var BusinessType = $('#BusinessType').find(":selected").text();
         $( ".inputfield" ).each(function( index ) {
             var className = $(this).attr('typeb');
-            // alert(className);
+
             if(className != 'General' && BusinessType != className){
                 $(this).hide();
             }
@@ -16,7 +22,12 @@ $(function()
         });
 
     });
-
+    /**
+     * The function get event if address fields focus out (change address).
+     * The function get from google API location of address and change location of map
+     * @.address class of all address fields
+     * @return new location on map
+     */
     $( ".address" ).focusout(function() {
 
         var city  = $('#city').val();
@@ -43,6 +54,10 @@ $(function()
 
     });
 
+    /**
+     * If business id different of zero this is existing business.
+     * get from the database all the data about specific business and fill all the fields
+     */
     if(bid != 0){
         $.get( "../function/getBusinessById.php?bid="+bid, function( item )
         {
@@ -58,8 +73,6 @@ $(function()
 
                 });
 
-                //$( "input[name*='name']").val();
-
             }
 
             $( "#BusinessType" ).change();
@@ -67,7 +80,7 @@ $(function()
         });
     }
 
-
+    //action to show relevant fields by type call $( "#BusinessType" ).change() function
     $( "#BusinessType" ).change();
 });
 
