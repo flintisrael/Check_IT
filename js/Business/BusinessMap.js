@@ -1,20 +1,18 @@
 $(function()
 {
-    //alert('elad');
-
-    //var username = sessionStorage.getItem('clicked');
-    // alert( sessionStorage.getItem('clicked'));
 
     var map;
     var marker;
     var item;
     var markers = [];
 
-
-
+    /**
+     * The function initialize the map of business User
+     * add marks with details of each business on map
+     * Locate the map by the user location.
+     */
     function initialize()
     {
-
         $.get( "getbusinesses.php", function( item )
         {
             item = JSON.parse(item);
@@ -66,18 +64,25 @@ $(function()
         }
     }
 
+    /**
+     * put default location
+     * @browserHasGeolocation boolean
+     * @infoWindow put window on location
+     * @pos default location
+     */
     function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         infoWindow.setPosition(pos);
         infoWindow.setContent(browserHasGeolocation ?
             'שנה הגדרות אפשר מיקום במכשיר' :
             'Error: Your browser doesn\'t support geolocation.');
 
-
-
     }
     google.maps.event.addDomListener(window, 'load', initialize);
 
-
+    /**
+     * the function get details about business and put marker on map
+     * @item {business} all the details of database
+     */
     function addMarker(item){
 
         var lat = item['Lat'];
@@ -95,18 +100,15 @@ $(function()
         PhotoURL = '../image/businessProfile/'+PhotoURL;
 
 
-
-
-
         var contentString = '<div id="content">'+
             '<div id="siteNotice">'+
             '</div>'+
-            '<h4 id="firstHeading" class="firstHeading" style="color:#DF7401"><a href="businessPage.php?bid='+bId+'">'+name.toString()+'</a></h4>'+
+            '<h4 id="firstHeading" class="firstHeading" style="color:#DF7401"><a href="businessPage.php?bid='+bId+' " target="_blank">'+name.toString()+'</a></h4>'+
             '<div id="bodyContent">'+
             '</br>' +
 
             '<img src="'+PhotoURL+'"style="width: 150px;height:100px">'+
-            '<div><a href="businessStaticsPage.php?bid='+bId+'" >Feedbacks Stats</a> </div>' +
+            '<div><a href="businessStaticsPage.php?bid='+bId+' " target="_blank" >Feedbacks Stats</a> </div>' +
 
 
             '</div>'+
@@ -130,7 +132,6 @@ $(function()
 
         markers.push(marker);
         marker.setMap(map);
-
 
     }
 
