@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * The page return all the data from database about all Businesses
+ *
+ * @author Israel Flint , Elad Afif
+ * @return all the data from database about all Businesses
+ */
 
 
 include ($_SERVER['DOCUMENT_ROOT']."/checkit/database/connect.php");
