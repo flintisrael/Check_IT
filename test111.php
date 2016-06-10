@@ -1,6 +1,6 @@
 <?PHP
 include ($_SERVER['DOCUMENT_ROOT']."/checkit/database/connect.php");
-
+// test to export to excel
 //header('Content-Encoding: UTF-8');
 
 $sql = "
@@ -15,7 +15,6 @@ $result = mysql_query($sql);
 
 $a = 'bid';
 $b = 'Btid';
-
 
 echo '<table id="display">';
 
